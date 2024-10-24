@@ -234,11 +234,6 @@ a {
   text-decoration: none;
 }
 
-@media only screen and (max-width: 576px) {
-  section {
-    margin: 2.5rem 0 2.5rem 0;
-  }
-}
 /* Font size */
 /* 18px */
 /*20 px*/
@@ -369,11 +364,6 @@ a {
   text-decoration: none;
 }
 
-@media only screen and (max-width: 576px) {
-  section {
-    margin: 2.5rem 0 2.5rem 0;
-  }
-}
 body {
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
@@ -382,7 +372,6 @@ body {
   font-family: Open Sans;
   font-size: 18px;
   font-weight: 400;
-  line-height: 53.28px;
   text-align: center;
 }
 
@@ -402,6 +391,10 @@ body {
 
 .count-block-2 {
   width: 100% !important;
+}
+
+.w-49 {
+  width: 49% !important;
 }
 
 .count-num {
@@ -424,14 +417,21 @@ body {
 
 .scroll-link {
   position: absolute;
-  bottom: 0; /* Align to the bottom of the parent section */
+  bottom: 50px; /* Align to the bottom of the parent section */
   left: 50%; /* Move to the center horizontally */
   transform: translateX(-50%); /* Center it precisely */
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 300;
-  line-height: 35.52px;
   text-align: center;
   color: #FFFFFF;
+}
+
+.bottom-0 {
+  bottom: 0 !important;
+}
+
+.gap-32 {
+  gap: 32px;
 }
 
 .text-blue {
@@ -456,4 +456,9 @@ body {
   font-size: 44px;
   font-weight: 700;
   text-align: center;
+}
+
+.social-icon:hover {
+  border: 3px solid #fdb913;
+  border-radius: 50%;
 }/*# sourceMappingURL=style.css.map */
