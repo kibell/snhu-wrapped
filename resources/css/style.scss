@@ -1,0 +1,114 @@
+// styles.scss
+
+@import "./Sass/Utilities/variables";
+@import "./Sass/Utilities/themes";
+@import "./Sass/Components/accordion";
+@import "./Sass/Components/accrediation";
+@import "./Sass/Components/buttons";
+@import "./Sass/Components/card";
+@import "./Sass/Components/footer";
+@import "./Sass/Components/nav";
+@import "./Sass/Utilities/assets";
+@import "./Sass/Utilities/global";
+
+
+body {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+
+.hero-p {
+  font-family: Open Sans;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 53.28px;
+  text-align: center;
+
+}
+
+.count-block {
+  background: #ffff;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 10px;
+  flex-direction: column;
+  display: flex;
+  width: 400px;
+}
+
+.count-block-1 {
+  width: 800px !important;
+}
+
+.count-block-2 {
+  width: 100% !important;
+}
+
+
+.count-num {
+  font-family: Open Sans;
+font-size: 32px;
+font-weight: 700;
+text-align: center;
+
+}
+
+.count-des {
+  font-family: $open-sans;
+font-size: 12px;
+font-weight: 700;
+text-align: center;
+
+}
+
+.parent-section {
+  position: relative; /* Establish a positioning context for child elements */
+ 
+}
+
+.scroll-link {
+  position: absolute;
+  bottom: 0; /* Align to the bottom of the parent section */
+  left: 50%; /* Move to the center horizontally */
+  transform: translateX(-50%); /* Center it precisely */
+font-size: 12px;
+font-weight: 300;
+line-height: 35.52px;
+text-align: center;
+color: #FFFFFF;
+}
+
+.text-blue {
+  color: $ink-blue !important;
+}
+
+.vh-100 {
+height: 100vh;
+}
+
+
+.bg-img {
+  background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    height: 100vh;
+    margin: 0;
+}
+
+
+.dean-list {
+  font-family: Open Sans;
+font-size: 44px;
+font-weight: 700;
+text-align: center;
+
+}
+  
+  
+  
+ 
+  
+  
+ 
+  
