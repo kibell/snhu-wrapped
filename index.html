@@ -130,6 +130,25 @@ set @AreaCount = LookUp('ENT.DE-SNHU-Wrapped-Student-States','StudentsInState','
 ]%%
 -->
 
+ <!--%%[ 
+Var @preferred_first_name__C, @ID, @first_name__c
+
+set @ID = queryparameter("SFID")
+set @first_name__c = queryparameter("firstname")
+
+set @preferred_first_name__C = Lookup("ENT.Unify-Contacts-PFN-Clean","Preferred_First_Name__c","id", @ID)
+ 
+var @firstnamecombo
+Set @firstnamecombo = @preferred_first_name__C
+IF(EMPTY(@preferred_first_name__C))
+THEN
+Set @firstnamecombo = @first_name__c
+ENDIF
+
+
+]%% -->
+
+
   <!-- Header + Nav -->
 
   <header>
@@ -149,7 +168,7 @@ set @AreaCount = LookUp('ENT.DE-SNHU-Wrapped-Student-States','StudentsInState','
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center py-3">
-          <h1 class="text-white">{amp-first-name}'s SNHU Year in Review</h1>
+          <h1 class="text-white">%%=v(@firstnamecombo)=%%'s SNHU Year in Review</h1>
         </div>
       </div>
       <div class="row">
@@ -250,6 +269,8 @@ set @AreaCount = LookUp('ENT.DE-SNHU-Wrapped-Student-States','StudentsInState','
   </section>
 
 <!---Deans List-->
+
+<!--IF Dean Amp script-->
   <section id="dean-section" class="vh-100  d-flex align-items-center bg-wrap bg-img parent-section" style="background-image: url(https://image.dream.snhu.edu/lib/fe9213737461067576/m/1/3901406c-74ca-4462-9678-cb1d52559f07.gif); background-size: cover;">
     <div class="container">
       <div class="row">
@@ -265,6 +286,8 @@ set @AreaCount = LookUp('ENT.DE-SNHU-Wrapped-Student-States','StudentsInState','
       </div>
     </div>
   </section>
+<!--End if -->
+
 
   <!---Community-->
   <section id="community-section" class="vh-100  d-flex align-items-center bg-wrap bg-img parent-section" style="background-image: url(https://image.dream.snhu.edu/lib/fe9213737461067576/m/1/fa4ab699-d7fa-4f84-aca0-4b162e58447e.gif); background-size: cover;">
@@ -295,7 +318,7 @@ set @AreaCount = LookUp('ENT.DE-SNHU-Wrapped-Student-States','StudentsInState','
       <div class="row">
         <div class="col-md-6">
           <h2 class="text-white">We are so proud of everything you accomplished at SNHU in 2024. Don’t let us be the only ones celebrating your hard work. Share with friends and family to show just how much work you put in this year!</h2>
-        <div class="d-flex gap-32">
+        <div class="d-flex justify-content-start gap-3">
           <a href="#" class="social-icon"><img src="https://image.dream.snhu.edu/lib/fe9213737461067576/m/1/c6868985-12ed-43be-892f-fd7623f9558a.png" alt=""></a>
           <a href="#" class="social-icon"><img src="https://image.dream.snhu.edu/lib/fe9213737461067576/m/1/15f37d25-2bae-4a31-8ef5-6fbcba84d027.png" alt=""></a>
           <a href="#" class="social-icon"><img src="https://image.dream.snhu.edu/lib/fe9213737461067576/m/1/21da56b3-4433-42dd-83eb-73ff1972ba18.png" alt=""></a>
@@ -312,25 +335,12 @@ set @AreaCount = LookUp('ENT.DE-SNHU-Wrapped-Student-States','StudentsInState','
 
   <footer class="container-fluid" style="background-color:#0B1A32;
   ;">
-    <div class="col-10 d-flex flex-wrap justify-content-between align-items-center px-3 px-md-5 py-5 mx-auto">
-      <p class="col-md-4 lh-lg" style="color:#fff"><strong>SNHU Admission
-        </strong><br>
-        55 S. Commercial Street, Manchester, NH 03101<br>
-        Office Phone: 888.387.0864<br>
-        admissions@snhu.edu</p>
-      <a href="https://www.snhu.edu/" target="_blank"
-        class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-        <img
-          src="https://client-data.knak.io/production/email_assets/5fd10b569d941/Y9PaAR4BN1uvwQSeUR37Jtdwa2YUrN1By1RZIsk8.png"
-          height="80" alt="SNHU logo">
-      </a>
-      </a>
-      <p class="col-md-4 justify-content-end lh-lg text-md-end" style="color: #fff;">
-        © 2024<br>
-        Southern New Hampshire University<br>
-        View our <a href="https://www.snhu.edu/privacy-policy" class="text-link">Privacy Policy</a> | <a
-          href="https://www.snhu.edu/about-us/accessibility" class="text-link">Accessibility at SNHU</a>
-      </p>
+    <div class="col-md-12  ">
+      <p class="text-center p-5 m-0">If you’re not registered for courses next term, reach out to your advisor at advising@snhu.edu or call 877.591.4723. 
+        <br>
+        Don’t miss your chance to start the new year off right—next term begins January 6, 2025. 
+        <br>
+        Already registered? We can’t wait to see what you’ll accomplish in 2025</p>
     </div>
   </footer>
 
