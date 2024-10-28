@@ -108,10 +108,27 @@
 
 
 <body>
+
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TM57T68Q" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+
+  <!--
+%%[
+var @sfid, @CompAssignment, @AreaCount, @HighestGrade, @TotalPoints, @HighestGradeLet, @HighestGradeCourse, @credits
+set @sfid = QueryParameter('sfid')
+
+set @CompAssignment = LookUp('ENT.DE-SNHU-Wrapped-AssignmentCount-TotalPoints','Completed_Assignments','ContactId', @sfid)
+set @TotalPoints = LookUp('ENT.DE-SNHU-Wrapped-AssignmentCount-TotalPoints','TotalPoints','ContactId', @sfid)
+set @HighestGrade = LookUp('ENT.DE-SNHU-Wrapped-HighestGrade-CompletedCourses','Current_Grade__c','ContactId', @sfid)
+set @HighestGradeLet = LookUp('ENT.DE-SNHU-Wrapped-HighestGrade-CompletedCourses','Final_Grade__c','ContactId', @sfid)
+set @HighestGradeCourse = LookUp('ENT.DE-SNHU-Wrapped-HighestGrade-CompletedCourses','CourseName','ContactId', @sfid)
+set @Credits = LookUp('ENT.DE-SNHU-Wrapped-EarnedCredits-PastYear','EarnedCredits','ContactId', @sfid)
+set @AreaCount = LookUp('ENT.DE-SNHU-Wrapped-Student-States','StudentsInState','Id', @sfid)
+
+]%%
+-->
 
   <!-- Header + Nav -->
 
@@ -174,19 +191,21 @@
   </section>
 
   <!---Assignments Completed-->
-  <section id="assignment-section" class="vh-100  d-flex align-items-center parent-section"  style="background-image:url(https://image.dream.snhu.edu/lib/fe9213737461067576/m/1/5c2b020e-ba2f-43a7-a2f5-414335128a13.gif); background-size: cover;">
+  <section id="assignment-section" class="vh-100  d-flex align-items-center parent-section">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
           <h2 class="">Speaking of the time you spent in Brightspace, check out the assignments you completed along the way!</h2>
           
         </div>
-        <div class="col-md-8 d-flex align-items-center justify-content-center" style="gap:32px">
+      
+
+        <div class="col-md-8 d-flex align-items-center justify-content-center parent-section" style="gap:32px">
           
-            <div class="count-block"><span class="count-num">{75}</span> <span>Completed Assignments</span></div>
-            <div class="count-block"><span class="count-num">{4252.16}</span> <span>Total Earned Points</span></div>
-          
-        </div>
+          <div class="count-block"><span class="count-num">%%=v(@CompAssignment)=%%</span> <span class="count-des">Completed Assignments</span></div>
+          <div class="count-block"><span class="count-num">%%=v(@TotalPoints)=%%</span> <span class="count-des">Total Earned Points </span></div>
+        
+      </div>
         <a href="#credits-section" class="scroll-link text-blue">And earning credits toward your degree ↓</a>
       </div>
     </div>
@@ -202,7 +221,7 @@
         </div>
         <div class="col-md-8 d-flex align-items-center justify-content-center" style="gap:32px">
           
-            <div class="count-block-1 count-block"><span class="count-num">{12}</span> <span>Credits earned this year</span></div>
+            <div class="count-block-1 count-block"><span class="count-num">%%=v(@credits)=%%</span> <span>Credits earned this year</span></div>
             
         </div>
         <a href="#grade-section" class="scroll-link ">Don’t forget about the course you crushed ↓</a>
@@ -222,7 +241,7 @@
         </div>
         <div class="col-md-8 d-flex align-items-center justify-content-center" style="gap:32px">
           
-            <div class="count-block count-block-1"><span class="count-num">{A}</span> <span>{93.98%}</span></div>
+            <div class="count-block count-block-1"><span class="count-num">%%=v(@HighestGradeLet)=%%</span> <span>%%=v(@HighestGrade)=%%%</span></div>
           
         </div>
         <a href="#dean-section" class="scroll-link">You even made the Dean’s list ↓</a>
@@ -262,7 +281,7 @@
             <div class="count-block w-49 col-md-6"><span class="count-num">{557}</span> <span class="count-des">Consecutive days enrolled at SNHU</span></div>
           </div>
           <div class="row">
-            <div class="count-block count-block-2 col-md-12"><span class="count-num">You're 1 of 482</span> <span class="count-des">Hardworking SNHU students in your area.</span></div>
+            <div class="count-block count-block-2 col-md-12"><span class="count-num">You're 1 of  %%=v(@AreaCount)=%%</span> <span class="count-des">Hardworking SNHU students in your area.</span></div>
           </div>
         </div>
       </div>
