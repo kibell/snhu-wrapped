@@ -163,7 +163,7 @@ ENDIF
     </nav>
   </header>
   <!--Hero-->
-  <section id="hero-section" class="py-5 hero-section vh-100 d-flex align-items-center parent-section"
+  <section id="hero-section" class="py-5 hero-section vh-60 d-flex align-items-center parent-section"
     style="background-image:url(https://image.dream.snhu.edu/lib/fe9213737461067576/m/1/8caf6884-58e8-4cba-88c0-9e3f58991112.gif); background-size: cover;">
     <div class="container">
       <div class="row">
@@ -240,7 +240,7 @@ ENDIF
         </div>
         <div class="col-md-8 d-flex align-items-center justify-content-center" style="gap:32px">
           
-            <div class="count-block-1 count-block"><span class="count-num">%%=v(@credits)=%%</span> <span>Credits earned this year</span></div>
+            <div class="count-block-1 count-block"><span class="count-num">%%=v(@credits)=%%</span> <span class="count-des">Credits earned this year</span></div>
             
         </div>
         <a href="#grade-section" class="scroll-link ">Don’t forget about the course you crushed ↓</a>
@@ -249,7 +249,7 @@ ENDIF
   </section>
 
   <!---Grade-->
-  <section id="grade-section" class="vh-100  d-flex align-items-center bg-wrap parent-section">
+  <section id="grade-section" class="vh-100  d-flex align-items-center bg-wrap parent-section" style="background-image:url(https://image.dream.snhu.edu/lib/fe9213737461067576/m/1/821efc2a-8e19-48b0-ae0c-757f8a704071.gif); background-size: cover;">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
@@ -260,7 +260,7 @@ ENDIF
         </div>
         <div class="col-md-8 d-flex align-items-center justify-content-center" style="gap:32px">
           
-            <div class="count-block count-block-1"><span class="count-num">%%=v(@HighestGradeLet)=%%</span> <span>%%=v(@HighestGrade)=%%%</span></div>
+            <div class="count-block count-block-1"><span class="count-num">%%=v(@HighestGradeLet)=%%</span> <span class="count-des">%%=v(@HighestGrade)=%%%</span></div>
           
         </div>
         <a href="#dean-section" class="scroll-link">You even made the Dean’s list ↓</a>
@@ -346,9 +346,7 @@ ENDIF
 
   <script>
     window.onload = function() {
-      // Scroll to the element with id "specific-section" when the page loads
-      document.getElementById("hero-section").scrollIntoView();
-
+     
     // Get the current page URL
     const pageUrl = encodeURIComponent(window.location.href);
     const pageTitle = encodeURIComponent(document.title);
