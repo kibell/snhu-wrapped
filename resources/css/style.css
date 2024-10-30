@@ -186,7 +186,7 @@ h2 {
   margin-bottom: 1.5rem;
   color: #00244e;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 32px;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -200,7 +200,7 @@ h3 {
 p,
 li {
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 400;
   color: #666666;
   line-height: 1.5;
@@ -316,7 +316,7 @@ h2 {
   margin-bottom: 1.5rem;
   color: #00244e;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 32px;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -330,7 +330,7 @@ h3 {
 p,
 li {
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 400;
   color: #666666;
   line-height: 1.5;
@@ -371,7 +371,7 @@ body {
 
 .hero-p {
   font-family: Open Sans;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 400;
   text-align: center;
 }
@@ -400,7 +400,7 @@ body {
 
 .count-num {
   font-family: Open Sans;
-  font-size: 32px;
+  font-size: 44px;
   font-weight: 700;
   text-align: center;
   word-break: break-word;
@@ -429,7 +429,7 @@ body {
   font-size: 18px;
   font-weight: 600;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   animation: bounce 2s infinite;
 }
 
@@ -474,29 +474,34 @@ body {
   border-radius: 50%;
 }
 
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    bottom: 40px;
-  }
-  40% {
-    bottom: 60px;
-  }
-  60% {
-    bottom: 50px;
-  }
-}
 #assignment-section {
   background-image: url(https://image.dream.snhu.edu/lib/fe9213737461067576/m/1/5c2b020e-ba2f-43a7-a2f5-414335128a13.gif);
   background-size: cover;
   background-position: center;
 }
 
+.h-64 {
+  font-size: 4rem;
+}
+
 @media only screen and (max-width: 576px) {
+  .h-64 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  .hero-p {
+    font-size: 18px;
+  }
   .content-grid {
     display: flex;
   }
+  .count-num {
+    font-size: 32px;
+  }
   #assignment-section {
-    background-color: #F3EFEE;
+    background-color: #f3efee;
     background-image: none !important;
   }
   .dean-list {
@@ -507,5 +512,16 @@ body {
   }
   .scroll-link {
     font-size: 14px;
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    bottom: 40px;
+  }
+  40% {
+    bottom: 60px;
+  }
+  60% {
+    bottom: 50px;
   }
 }/*# sourceMappingURL=style.css.map */
